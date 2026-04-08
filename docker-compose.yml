@@ -1,0 +1,34 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smartcity-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - smartcity-data:/app/data
+      - smartcity-uploads:/app/uploads
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:./data/smartcity_ecommerce;AUTO_SERVER=TRUE
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=
+      - JWT_SECRET=mySecretKeyForJWTTokenGenerationThatIsLongEnoughForHS256Algorithm123456
+      - JWT_EXPIRATION=86400000
+      - FILE_UPLOAD_DIR=./uploads
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: smartcity-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  smartcity-data:
+  smartcity-uploads:
