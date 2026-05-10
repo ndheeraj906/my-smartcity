@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import API from '../../api/axios';
-
+import API, { BASE_URL } from '../../api/axios';
 export default function ShopManagement() {
   const [shop, setShop] = useState(null);
   const [form, setForm] = useState({ name: '', description: '' });
@@ -57,7 +56,7 @@ export default function ShopManagement() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
               {shop.image ? (
-                <img src={`http://localhost:8080/uploads/${shop.image}`} alt="Shop"
+                <img src={`${BASE_URL}/uploads/${shop.image}`} alt="Shop"
                   className="w-full h-full object-cover" />
               ) : <span className="text-4xl">🏪</span>}
             </div>

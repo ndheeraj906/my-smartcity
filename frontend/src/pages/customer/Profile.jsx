@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import API from '../../api/axios';
-
+import API, { BASE_URL } from '../../api/axios';
 export default function Profile() {
   const [profile, setProfile] = useState({ fullName: '', email: '', phone: '' });
   const [message, setMessage] = useState('');
@@ -45,7 +44,7 @@ export default function Profile() {
         <div className="flex items-center gap-6 mb-6">
           <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
             {profile.profileImage ? (
-              <img src={`http://localhost:8080/uploads/${profile.profileImage}`} alt="Profile"
+              <img src={`${BASE_URL}/uploads/${profile.profileImage}`} alt="Profile"
                 className="w-full h-full object-cover" />
             ) : <span className="text-4xl">👤</span>}
           </div>

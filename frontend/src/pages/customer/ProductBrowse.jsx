@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import API from '../../api/axios';
-
+import API, { BASE_URL } from '../../api/axios';
 export default function ProductBrowse() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
@@ -75,7 +74,7 @@ export default function ProductBrowse() {
           <div key={product.id} className="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition">
             <div className="h-48 bg-gray-200 flex items-center justify-center">
               {product.image ? (
-                <img src={`http://localhost:8080/uploads/${product.image}`} alt={product.name}
+                <img src={`${BASE_URL}/uploads/${product.image}`} alt={product.name}
                   className="h-full w-full object-cover" />
               ) : (
                 <span className="text-gray-400 text-4xl">📦</span>

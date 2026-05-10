@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import API from '../../api/axios';
-
+import API, { BASE_URL } from '../../api/axios';
 export default function ProductManagement() {
   const [products, setProducts] = useState([]);
   const [shop, setShop] = useState(null);
@@ -134,7 +133,7 @@ export default function ProductManagement() {
           <div key={product.id} className="bg-white rounded-lg shadow p-4">
             <div className="h-40 bg-gray-200 rounded mb-3 flex items-center justify-center overflow-hidden">
               {product.image ? (
-                <img src={`http://localhost:8080/uploads/${product.image}`} alt=""
+                <img src={`${BASE_URL}/uploads/${product.image}`} alt=""
                   className="w-full h-full object-cover" />
               ) : <span className="text-3xl">📦</span>}
             </div>

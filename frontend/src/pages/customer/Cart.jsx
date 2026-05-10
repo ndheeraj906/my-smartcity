@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import API from '../../api/axios';
-
+import API, { BASE_URL } from '../../api/axios';
 export default function Cart() {
   const [items, setItems] = useState([]);
   const [address, setAddress] = useState('');
@@ -63,7 +62,7 @@ export default function Cart() {
               <div key={item.id} className="bg-white rounded-lg shadow p-4 flex items-center gap-4">
                 <div className="w-20 h-20 bg-gray-200 rounded flex items-center justify-center flex-shrink-0">
                   {item.productImage ? (
-                    <img src={`http://localhost:8080/uploads/${item.productImage}`} alt=""
+                    <img src={`${BASE_URL}/uploads/${item.productImage}`} alt=""
                       className="w-full h-full object-cover rounded" />
                   ) : <span className="text-2xl">📦</span>}
                 </div>
