@@ -46,8 +46,8 @@ docker-compose down
 
 | Service | URL |
 |---|---|
-| Frontend | https://smartcity-frontend-cytddu2xta-uc.a.run.app |
-| Backend API | https://smartcity-backend-cytddu2xta-uc.a.run.app |
+| **Live Application** | **https://smartcity-frontend-cytddu2xta-uc.a.run.app** |
+| Backend API (Direct) | https://smartcity-backend-cytddu2xta-uc.a.run.app |
 | H2 Console | http://localhost:8080/h2-console |
 | Swagger UI | https://smartcity-backend-cytddu2xta-uc.a.run.app/swagger-ui.html |
 

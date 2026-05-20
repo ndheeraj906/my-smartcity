@@ -41,7 +41,7 @@ echo "Backend Host: $BACKEND_HOST"
 
 # 4. Update Frontend Environment
 echo "Updating Frontend Environment..."
-echo "VITE_API_BASE_URL=$BACKEND_URL" > ./frontend/.env.docker
+echo "VITE_API_BASE_URL=" > ./frontend/.env.docker
 
 # 5. Build & push Frontend image
 echo "Building Frontend..."
