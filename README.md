@@ -46,10 +46,10 @@ docker-compose down
 
 | Service | URL |
 |---|---|
-| Frontend | https://smartcity-frontend-554896342930.us-central1.run.app |
-| Backend API | https://smartcity-backend-554896342930.us-central1.run.app |
+| Frontend | https://smartcity-frontend-cytddu2xta-uc.a.run.app |
+| Backend API | https://smartcity-backend-cytddu2xta-uc.a.run.app |
 | H2 Console | http://localhost:8080/h2-console |
-| Swagger UI | https://smartcity-backend-554896342930.us-central1.run.app/swagger-ui.html |
+| Swagger UI | https://smartcity-backend-cytddu2xta-uc.a.run.app/swagger-ui.html |
 
 ---
 
@@ -78,4 +78,4 @@ Username: `sa` · Password: *(empty)*
 | `SPRING_DATASOURCE_URL` | H2 file-based DB (JDBC: jdbc:h2:file:./data/smartcity_ecommerce) |
 | `JWT_SECRET` | Set in deployment environment |
 | `FILE_UPLOAD_DIR` | `./uploads` |
-| `VITE_API_BASE_URL` | https://smartcity-backend-554896342930.us-central1.run.app |
+| `VITE_API_BASE_URL` | https://smartcity-backend-cytddu2xta-uc.a.run.app |
